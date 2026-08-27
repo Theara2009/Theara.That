@@ -56,6 +56,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const themeToggle = document.querySelector(".theme-toggle");
 const langBtn = document.querySelector(".lang-btn");
+const colorPicker = document.querySelector(".color-picker");
+const colorBtn = document.querySelector(".color-btn");
 const backTop = document.querySelector("#backTop");
 const toast = document.querySelector("#toast");
 const form = document.querySelector("#contactForm");
@@ -86,6 +88,29 @@ function setTheme(theme) {
 }
 setTheme(localStorage.getItem("portfolio-theme") || "dark");
 themeToggle.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
+
+const colors = {
+  red: ["#ef4444", "#f97316"], pink: ["#ec4899", "#f472b6"], yellow: ["#eab308", "#facc15"],
+  orange: ["#f97316", "#fb923c"], grey: ["#6b7280", "#9ca3af"]
+};
+function setColor(colorName) {
+  const [primary, accent] = colors[colorName] || colors.red;
+  root.style.setProperty("--primary-2", primary);
+  root.style.setProperty("--accent", accent);
+  colorBtn.style.background = primary;
+  document.querySelectorAll(".color-option").forEach(option => option.classList.toggle("selected", option.dataset.color === colorName));
+  localStorage.setItem("portfolio-color", colorName);
+}
+setColor(localStorage.getItem("portfolio-color") || "red");
+colorBtn.addEventListener("click", () => {
+  const open = colorPicker.classList.toggle("open");
+  colorBtn.setAttribute("aria-expanded", open);
+});
+document.querySelectorAll(".color-option").forEach(option => option.addEventListener("click", () => {
+  setColor(option.dataset.color);
+  colorPicker.classList.remove("open");
+  colorBtn.setAttribute("aria-expanded", "false");
+}));
 
 menuToggle.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");

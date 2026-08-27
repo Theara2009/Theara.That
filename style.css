@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700;900&display=swap');
+
 :root {
   --bg: #07131f;
   --bg-2: #0c2230;
@@ -32,6 +34,7 @@ body {
   color: var(--text); background: radial-gradient(circle at 12% 8%, rgba(45,108,223,.2), transparent 29%), radial-gradient(circle at 90% 54%, rgba(184,239,85,.08), transparent 25%), var(--bg);
   line-height: 1.65; overflow-x: hidden; transition: background .3s, color .3s;
 }
+h1, h2, h3, .brand { font-family: "Battambang", "Trebuchet MS", sans-serif; }
 body::before { content:""; position:fixed; inset:0; pointer-events:none; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 70px 70px; mask-image: linear-gradient(to bottom, black, transparent 70%); opacity:.18; z-index:-3; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
@@ -54,7 +57,19 @@ img { max-width:100%; display:block; }
 .header-profile { width:40px; height:40px; display:grid; place-items:center; border:1px solid var(--primary-2); border-radius:50%; overflow:hidden; transition:.25s; }
 .header-profile img { width:100%; height:100%; object-fit:cover; }
 .header-profile:hover { transform:translateY(-2px); border-color:var(--accent); box-shadow:0 0 0 4px rgba(255,128,102,.12); }
-.icon-btn, .lang-btn, .menu-toggle { width:40px; height:40px; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:12px; }
+.icon-btn, .lang-btn, .menu-toggle { width:40px; height:40px; border:1px solid transparent; color:#fff; border-radius:12px; transition:transform .25s, box-shadow .25s, background .25s; }
+.icon-btn { background:#facc15; color:#422006; }
+.lang-btn { background:#ec4899; }
+.menu-toggle { background:#f97316; }
+.icon-btn:hover, .lang-btn:hover, .menu-toggle:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.2); }
+.color-picker { position:relative; }
+.color-btn { width:40px; height:40px; border:1px solid transparent; border-radius:12px; background:var(--primary-2); color:#fff; font-size:1.45rem; line-height:1; transition:transform .25s, box-shadow .25s; }
+.color-btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.2); }
+.color-options { position:absolute; top:calc(100% + 10px); right:0; display:flex; gap:7px; padding:8px; border:1px solid var(--line); border-radius:14px; background:var(--surface-solid); box-shadow:var(--shadow); opacity:0; visibility:hidden; transform:translateY(-6px); transition:.2s; }
+.color-picker.open .color-options { opacity:1; visibility:visible; transform:none; }
+.color-option { width:25px; height:25px; border:2px solid rgba(255,255,255,.7); border-radius:50%; cursor:pointer; transition:transform .2s; }
+.color-option:hover, .color-option.selected { transform:scale(1.18); }
+.color-red { background:#ef4444; }.color-pink { background:#ec4899; }.color-yellow { background:#facc15; }.color-orange { background:#f97316; }.color-grey { background:#6b7280; }
 .header-linkedin { width:40px; height:40px; display:grid; place-items:center; border:1px solid #0a66c2; border-radius:12px; color:#0a66c2; background:rgba(10,102,194,.12); transition:.25s; }
 .header-linkedin:hover { color:#fff; background:#0a66c2; transform:translateY(-2px); }
 .header-linkedin svg { width:18px; height:18px; fill:currentColor; }
@@ -80,9 +95,10 @@ img { max-width:100%; display:block; }
 .hero-buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
 .btn { border:0; border-radius:14px; padding:13px 20px; display:inline-flex; align-items:center; justify-content:center; gap:10px; font-weight:900; transition:transform .25s, box-shadow .25s, background .25s; }
 .btn:hover { transform:translateY(-3px); }
-.btn-primary { color:#07131f; background:var(--primary-2); box-shadow:0 14px 35px rgba(184,239,85,.2); }
-.btn-ghost { border:1px solid var(--line); background:var(--surface); color:var(--text); }
-.btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+.btn-primary { color:#fff; background:#ef4444; box-shadow:0 14px 35px rgba(239,68,68,.25); }
+.btn-primary:hover { background:#dc2626; }
+.btn-ghost { border:1px solid #6b7280; background:#6b7280; color:#fff; }
+.btn-ghost:hover { border-color:#4b5563; background:#4b5563; }
 .social-links { display:flex; gap:10px; margin-top:24px; }
 .social-links a { width:40px; height:40px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--muted); background:rgba(255,255,255,.035); transition:transform .25s, color .25s, border-color .25s, background .25s; }
 .social-links a:hover { transform:translateY(-4px); color:var(--primary-2); border-color:var(--primary-2); background:rgba(184,239,85,.1); }
@@ -96,15 +112,15 @@ img { max-width:100%; display:block; }
 .hero-stats strong { font-size:1.4rem; }
 .hero-stats span { color:var(--muted); font-size:.78rem; }
 .hero-visual { position:relative; min-height:550px; display:grid; place-items:center; }
-.profile-card { width:min(390px, 82vw); aspect-ratio: .78; position:relative; border:1px solid rgba(202,238,216,.25); border-radius:38px; overflow:hidden; background:linear-gradient(160deg, rgba(184,239,85,.16), rgba(45,108,223,.12)); box-shadow:var(--shadow); transform:rotate(2deg); }
+.profile-card { width:min(390px, 82vw); aspect-ratio: .78; position:relative; border:1px solid rgba(202,238,216,.25); border-radius:38px; overflow:hidden; background:linear-gradient(160deg, rgba(184,239,85,.16), rgba(45,108,223,.12)); box-shadow:var(--shadow); transform:rotate(2deg); animation:profileFloat 4.8s ease-in-out infinite; }
 .profile-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(5,7,13,.65)); }
 .profile-card img { width:100%; height:100%; object-fit:cover; }
-.profile-glow { position:absolute; width:220px; height:220px; background:var(--accent); filter:blur(80px); opacity:.3; top:-70px; right:-70px; }
+.profile-glow { position:absolute; width:220px; height:220px; background:var(--accent); filter:blur(80px); opacity:.3; top:-70px; right:-70px; animation:profileGlow 4s ease-in-out infinite; }
 .profile-badge { position:absolute; z-index:2; bottom:20px; left:20px; right:20px; border:1px solid rgba(255,255,255,.13); background:rgba(5,8,15,.72); backdrop-filter:blur(14px); padding:12px 14px; border-radius:15px; display:flex; align-items:center; gap:9px; font-size:.78rem; }
 .pulse-dot { width:9px; height:9px; border-radius:50%; background:var(--success); box-shadow:0 0 0 7px rgba(52,211,153,.12); }
 .orbit { position:absolute; border:1px dashed rgba(184,239,85,.34); border-radius:50%; }
-.orbit-one { width:500px; height:500px; transform:rotate(20deg); }
-.orbit-two { width:360px; height:360px; border-color:rgba(45,108,223,.4); transform:rotate(-28deg); }
+.orbit-one { width:500px; height:500px; transform:rotate(20deg); animation:orbitSpin 18s linear infinite; }
+.orbit-two { width:360px; height:360px; border-color:rgba(45,108,223,.4); transform:rotate(-28deg); animation:orbitSpinReverse 13s linear infinite; }
 .scroll-cue { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); width:25px; height:42px; border:1px solid var(--line); border-radius:20px; display:grid; place-items:start center; padding-top:7px; }
 .scroll-cue span { width:4px; height:8px; background:var(--primary-2); border-radius:5px; animation:scrollDot 1.5s infinite; }
 .section-heading { text-align:center; max-width:700px; margin:0 auto 50px; }
@@ -185,7 +201,8 @@ img { max-width:100%; display:block; }
 .footer { border-top:1px solid var(--line); padding:25px 0; }
 .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; color:var(--muted); font-size:.75rem; }
 .footer-top { color:var(--primary-2); font-weight:800; }
-.back-top { position:fixed; right:24px; bottom:24px; width:44px; height:44px; border-radius:14px; border:1px solid var(--line); background:var(--surface-solid); color:var(--text); box-shadow:var(--shadow); opacity:0; visibility:hidden; transform:translateY(10px); transition:.25s; z-index:40; }
+.back-top { position:fixed; right:24px; bottom:24px; width:44px; height:44px; border-radius:14px; border:1px solid #6b7280; background:#6b7280; color:#fff; box-shadow:var(--shadow); opacity:0; visibility:hidden; transform:translateY(10px); transition:.25s; z-index:40; }
+.back-top:hover { background:#4b5563; transform:translateY(-3px); }
 .back-top.show { opacity:1; visibility:visible; transform:none; }
 .toast { position:fixed; left:50%; bottom:25px; transform:translate(-50%, 20px); padding:12px 17px; background:var(--surface-solid); border:1px solid var(--line); border-radius:13px; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:.3s; z-index:100; font-size:.8rem; }
 .toast.show { opacity:1; transform:translate(-50%,0); }
@@ -196,8 +213,15 @@ img { max-width:100%; display:block; }
 @keyframes meteor { from { transform:translate(0,-100px) rotate(35deg); } to { transform:translate(360px,110vh) rotate(35deg); } }
 @keyframes scrollDot { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(12px);opacity:1} }
 @keyframes namePulse { 0%,100% { transform:translateY(0) rotate(0); } 35% { transform:translateY(-5px) rotate(-1deg); } 70% { transform:translateY(0) rotate(1deg); } }
+@keyframes profileFloat { 0%,100% { transform:rotate(2deg) translateY(0); } 50% { transform:rotate(-1deg) translateY(-12px); } }
+@keyframes profileGlow { 0%,100% { opacity:.24; transform:scale(.9); } 50% { opacity:.42; transform:scale(1.15); } }
+@keyframes orbitSpin { from { transform:rotate(20deg); } to { transform:rotate(380deg); } }
+@keyframes orbitSpinReverse { from { transform:rotate(-28deg); } to { transform:rotate(-388deg); } }
 @keyframes roleRun { 0%,100% { transform:translateX(0); color:var(--muted); } 45% { transform:translateX(9px); color:var(--primary-2); } 70% { transform:translateX(0); color:var(--muted); } }
 @keyframes heroElementIn { from { opacity:0; transform:translateY(18px); filter:blur(5px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .profile-card, .profile-glow, .orbit-one, .orbit-two { animation:none; }
+}
 @media (max-width: 1050px) {
   .skills-grid { grid-template-columns:repeat(3,1fr); }
   .project-grid, .service-grid { grid-template-columns:repeat(2,1fr); }
