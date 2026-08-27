@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="THEARA — responsive personal portfolio for an Information Technology student.">
+  <title>THEARA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="meteor-field" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="THEARA home"><img class="nav-avatar" src="assets/profile.png" alt=""> <span>THEARA</span></a>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark and light mode" title="Theme">☀️</button>
+        <button class="lang-btn" type="button" aria-label="Switch language">KH</button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+
+      <ul class="nav-links">
+        <li><a class="nav-link active" href="#home" data-i18n="navHome">Home</a></li>
+        <li><a class="nav-link" href="#about" data-i18n="navAbout">About</a></li>
+        <li><a class="nav-link" href="#skills" data-i18n="navSkills">Skills</a></li>
+        <li><a class="nav-link" href="#education" data-i18n="navEducation">Education</a></li>
+        <li><a class="nav-link" href="#projects" data-i18n="navProjects">Projects</a></li>
+        <li><a class="nav-link" href="#services" data-i18n="navServices">Services</a></li>
+        <li><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="heroEyebrow">WELCOME TO MY PORTFOLIO</p>
+          <h1 data-i18n="heroTitle">Hello, I'm <span class="name-live">THEARA</span></h1>
+          <h2 class="hero-role-live" data-i18n="heroRole">Information Technology student Web Developer</h2>
+          <p class="hero-text" data-i18n="heroText">I create responsive websites, useful digital experiences, and beginner-friendly technology projects while growing my skills every day.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#projects" data-i18n="viewWork">View My Work <span>↗</span></a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="contactMe">Contact Me <span>✦</span></a>
+          </div>
+          <div class="social-links" aria-label="Social links">
+            <a href="https://web.telegram.org/k/" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 3.4-3.1 16.2c-.2 1.1-.8 1.4-1.6.9l-4.5-3.3-2.2 2.1c-.2.2-.4.4-.8.4l.3-4.6 8.4-7.6c.4-.4-.1-.6-.6-.2L7.2 13.8l-4.4-1.4c-1-.3-1-1 .2-1.5L20.2 3c.9-.3 1.7.2 1.5.4Z"/></svg>
+            </a>
+            <a href="https://github.com/Theara2009" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.3-2.2-.3-4.5-1.1-4.5-4.8 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.7 9.7 0 0 1 5.1 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.7-2.3 4.5-4.5 4.8.4.3.7 1 .7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/thmthoh" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z"/></svg>
+            </a>
+            <a class="linkedin-link" href="https://www.linkedin.com/in/theara-that-a3b5a9431/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.4H2.3V21h2.9V8.4ZM3.8 3A1.8 1.8 0 1 0 3.8 6.6 1.8 1.8 0 0 0 3.8 3ZM9.1 8.4H6.3V21h2.8v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21h2.9v-6.8c0-3.3-.7-5.8-4.5-5.8-1.8 0-3 .9-3.5 1.8h-.1V8.4ZM17.6 8.4h-2.8V21h2.8v-6.2c0-1.6.3-3.2 2.3-3.2 2 0 2 1.9 2 3.3V21h2.9v-6.8c0-3.3-.7-5.8-4.5-5.8-1.8 0-3 .9-3.5 1.8h-.1V8.4Z"/></svg>
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>5+</strong><span data-i18n="statProjects">Projects</span></div>
+            <div><strong>5</strong><span data-i18n="statSkills">Core Skills</span></div>
+            <div><strong>100%</strong><span data-i18n="statPassion">Passion</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="profile-card">
+            <div class="profile-glow"></div>
+            <img src="assets/profile.png" alt="THEARA profile portrait">
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about"><span></span></a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="aboutEyebrow">WHO I AM</p>
+          <h2 data-i18n="aboutTitle">About <span>Me</span></h2>
+          <p data-i18n="aboutLead">A curious IT student who enjoys turning ideas into clean, practical digital experiences.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass reveal">
+            <p data-i18n="aboutP1">I'm THEARA, a first-year Information Technology student at Passerelles Numériques Cambodia. I enjoy learning web development, programming, UI/UX, and databases.</p>
+            <p data-i18n="aboutP2">My goal is to keep building real projects, improve my problem-solving skills, and create technology that is simple and useful for people.</p>
+            <div class="quick-facts">
+              <div><span>📍</span><div><small data-i18n="locationLabel">Location</small><strong>Cambodia</strong></div></div>
+              <div><span>🎓</span><div><small data-i18n="studyLabel">Study</small><strong>Information Technology</strong></div></div>
+              <div><span>💡</span><div><small data-i18n="focusLabel">Focus</small><strong>Web &amp; UI/UX</strong></div></div>
+            </div>
+          </div>
+          <div class="about-terminal reveal">
+            <div class="terminal-top"><span></span><span></span><span></span><b>theara.js</b></div>
+            <pre><code><span class="purple">const</span> <span class="blue">developer</span> = {
+  name: <span class="green">"THEARA"</span>,
+  role: <span class="green">"IT Student"</span>,
+  skills: [<span class="green">"HTML"</span>, <span class="green">"CSS"</span>,
+           <span class="green">"JavaScript"</span>, <span class="green">"Python"</span>],
+  mindset: <span class="green">"Learn → Build → Improve"</span>
+};</code></pre>
+            <div class="developer-icons" aria-label="Developer profile highlights">
+              <div class="developer-icon icon-code"><span>{ }</span><small>Code</small></div>
+              <div class="developer-icon icon-design"><span>✦</span><small>Design</small></div>
+              <div class="developer-icon icon-learn"><span>↗</span><small>Learn</small></div>
+              <div class="developer-icon icon-build"><span>⌘</span><small>Build</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="skillsEyebrow">WHAT I USE</p>
+          <h2 data-i18n="skillsTitle">My <span>Skills</span></h2>
+          <p data-i18n="skillsLead">Core technologies I practice through school work and personal projects.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <img src="assets/html.svg" alt="HTML5 icon"><h3>HTML5</h3><p data-i18n="htmlDesc">Semantic structure and accessible page layouts.</p><div class="skill-bar"><span style="--level:88%"></span></div><b>88%</b>
+          </article>
+          <article class="skill-card reveal">
+            <img src="assets/css.svg" alt="CSS3 icon"><h3>CSS3</h3><p data-i18n="cssDesc">Responsive layouts, animation, and modern styling.</p><div class="skill-bar"><span style="--level:84%"></span></div><b>84%</b>
+          </article>
+          <article class="skill-card reveal">
+            <img src="assets/javascript.svg" alt="JavaScript icon"><h3>JavaScript</h3><p data-i18n="jsDesc">Interactive UI, DOM logic, and form validation.</p><div class="skill-bar"><span style="--level:76%"></span></div><b>76%</b>
+          </article>
+          <article class="skill-card reveal">
+            <img src="assets/python.svg" alt="Python icon"><h3>Python</h3><p data-i18n="pythonDesc">Beginner programming and small practical projects.</p><div class="skill-bar"><span style="--level:72%"></span></div><b>72%</b>
+          </article>
+          <article class="skill-card reveal">
+            <img src="assets/sql.svg" alt="SQL database icon"><h3>SQL</h3><p data-i18n="sqlDesc">Database basics, tables, queries, and CRUD practice.</p><div class="skill-bar"><span style="--level:68%"></span></div><b>68%</b>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="eduEyebrow">MY JOURNEY</p>
+          <h2 data-i18n="eduTitle">Education &amp; <span>Growth</span></h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal"><div class="timeline-dot">🎓</div><div class="timeline-card"><span class="date">2026 — Present</span><h3>Passerelles Numériques Cambodia</h3><p data-i18n="eduPnc">Information Technology student. Learning web development, programming, databases, communication, and professional skills.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-dot">💻</div><div class="timeline-card"><span class="date" data-i18n="now">Now</span><h3 data-i18n="selfTitle">Self-Learning &amp; Projects</h3><p data-i18n="selfP">Practicing by building websites, Python applications, UI/UX concepts, and small JavaScript projects.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="projectsEyebrow">SELECTED WORK</p>
+          <h2 data-i18n="projectsTitle">Featured <span>Projects</span></h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal"><div class="project-number">01</div><div class="project-icon">👕</div><h3>Clothes Modern Of Youth</h3><p data-i18n="project1">A modern clothing website concept with products, promotions, contact information, and social links.</p><div class="tags"><span>HTML</span><span>CSS</span><span>UI</span></div><a href="#contact" data-i18n="projectLink">Discuss project ↗</a></article>
+          <article class="project-card reveal"><div class="project-number">02</div><div class="project-icon">🧮</div><h3>JavaScript Calculator</h3><p data-i18n="project2">A functional calculator project focused on DOM events, calculations, and clean interface design.</p><div class="tags"><span>JavaScript</span><span>DOM</span></div><a href="#contact" data-i18n="projectLink">Discuss project ↗</a></article>
+          <article class="project-card reveal"><div class="project-number">03</div><div class="project-icon">🎮</div><h3>Tic Tac Toe Game</h3><p data-i18n="project3">A browser game that practices JavaScript logic, state changes, winning conditions, and interaction.</p><div class="tags"><span>JS</span><span>Game</span></div><a href="#contact" data-i18n="projectLink">Discuss project ↗</a></article>
+          <article class="project-card reveal"><div class="project-number">04</div><div class="project-icon">📷</div><h3>Python Webcam Project</h3><p data-i18n="project4">A Python/OpenCV practice project for camera capture and video recording workflows.</p><div class="tags"><span>Python</span><span>OpenCV</span></div><a href="#contact" data-i18n="projectLink">Discuss project ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="servicesEyebrow">WHAT I CAN DO</p>
+          <h2 data-i18n="servicesTitle">My <span>Services</span></h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-icon">◈</span><h3 data-i18n="service1Title">Web Design</h3><p data-i18n="service1">Clean, responsive website layouts designed for desktop and mobile.</p></article>
+          <article class="service-card reveal"><span class="service-icon">✦</span><h3 data-i18n="service2Title">UI / UX Concepts</h3><p data-i18n="service2">Simple user flows, wireframe ideas, and interfaces centered on usability.</p></article>
+          <article class="service-card reveal"><span class="service-icon">⌘</span><h3 data-i18n="service3Title">Frontend Development</h3><p data-i18n="service3">Interactive pages using semantic HTML, pure CSS, and Vanilla JavaScript.</p></article>
+          <article class="service-card reveal"><span class="service-icon">◇</span><h3 data-i18n="service4Title">Learning Projects</h3><p data-i18n="service4">Small practical applications that turn classroom concepts into working products.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow" data-i18n="contactEyebrow">LET'S CONNECT</p>
+          <h2 data-i18n="contactTitle">Have an idea? <span>Let's build it.</span></h2>
+          <p data-i18n="contactLead">Send me a message. This demo form validates your information on the browser and shows a success message without a backend.</p>
+          <div class="contact-list">
+            <a href="mailto:theara@example.com">✉️ <span>thattheavy92@gamil.com</span></a>
+            <a href="#home">🌐 <span data-i18n="portfolioLink">Personal Portfolio</span></a>
+            <a href="#about">📍 <span>Cambodia</span></a>
+          </div>
+        </div>
+
+        <form class="contact-form glass reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <label><span data-i18n="nameLabel">Name</span><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required><small class="error"></small></label>
+            <label><span data-i18n="emailLabel">Email</span><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><small class="error"></small></label>
+          </div>
+          <label><span data-i18n="subjectLabel">Subject</span><input id="subject" name="subject" type="text" placeholder="Project idea" required><small class="error"></small></label>
+          <label><span data-i18n="messageLabel">Message</span><textarea id="message" name="message" rows="6" placeholder="Tell me about your idea..." required></textarea><small class="error"></small></label>
+          <button class="btn btn-primary submit-btn" type="submit"><span data-i18n="sendMessage">Send Message</span> <span>➜</span></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#home">THEARA</a>
+      <p>© <span id="year"></span> THEARA. <span data-i18n="footerText">Built with HTML, CSS &amp; Vanilla JavaScript.</span></p>
+      <a href="#top" class="footer-top" data-i18n="backTop"></a>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
