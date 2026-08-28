@@ -7,14 +7,4 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- Example of an additional page (Update or delete if it doesn't exist) -->
-    <!-- 
-    <url>
-        <loc>https://that-theara.vercel.app/about</loc>
-        <lastmod>2026-06-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    -->
 </urlset>
