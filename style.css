@@ -28,7 +28,7 @@
   --shadow: 0 24px 70px rgba(38,55,92,.13);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 body {
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   color: var(--text); background: radial-gradient(circle at 12% 8%, rgba(45,108,223,.2), transparent 29%), radial-gradient(circle at 90% 54%, rgba(184,239,85,.08), transparent 25%), var(--bg);
