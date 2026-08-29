@@ -61,6 +61,7 @@ const colorBtn = document.querySelector(".color-btn");
 const backTop = document.querySelector("#backTop");
 const toast = document.querySelector("#toast");
 const form = document.querySelector("#contactForm");
+const contactEmail = "thattheavy92@gmail.com";
 let lang = localStorage.getItem("portfolio-lang") || "en";
 
 function applyLanguage() {
@@ -90,8 +91,9 @@ setTheme(localStorage.getItem("portfolio-theme") || "dark");
 themeToggle.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
 
 const colors = {
-  red: ["#ef4444", "#f97316"], pink: ["#ec4899", "#f472b6"], yellow: ["#eab308", "#facc15"],
-  orange: ["#f97316", "#fb923c"], grey: ["#6b7280", "#9ca3af"]
+  red: ["#ef4444", "#f97316"],
+  yellow: ["#eab308", "#facc15"],
+  grey: ["#6b7280", "#9ca3af"]
 };
 function setColor(colorName) {
   const [primary, accent] = colors[colorName] || colors.red;
@@ -187,8 +189,26 @@ form.addEventListener("submit", e => {
     status.className = "form-status fail";
     return;
   }
-  status.textContent = lang === "en" ? "Message validated successfully! Demo form is ready for a backend/email service." : "ព័ត៌មានត្រូវបានពិនិត្យដោយជោគជ័យ! Form គំរូនេះអាចភ្ជាប់ Backend ឬ Email Service បាន។";
+
+  const name = document.querySelector("#name").value.trim();
+  const email = document.querySelector("#email").value.trim();
+  const subject = document.querySelector("#subject").value.trim();
+  const message = document.querySelector("#message").value.trim();
+
+  const body = [
+    `Name: ${name}`,
+    `Email: ${email}`,
+    "",
+    "Message:",
+    message
+  ].join("\n");
+
+  const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  status.textContent = lang === "en" ? "Your email app is opening with your message." : "កម្មវិធីអ៊ីមែលរបស់អ្នកកំពុងបើកជាមួយនឹងសាររបស់អ្នក។";
   status.className = "form-status success";
+  window.location.href = mailtoLink;
+
   form.reset();
   document.querySelectorAll(".error").forEach(x => x.textContent = "");
   document.querySelectorAll("input, textarea").forEach(x => x.classList.remove("invalid"));
@@ -199,12 +219,16 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 applyLanguage();
 
 const meteorField = document.querySelector(".meteor-field");
-for (let i = 0; i < 22; i++) {
-  const meteor = document.createElement("span");
-  meteor.className = "meteor";
-  meteor.style.setProperty("--x", `${Math.random() * 100}vw`);
-  meteor.style.setProperty("--size", `${35 + Math.random() * 80}px`);
-  meteor.style.setProperty("--duration", `${5 + Math.random() * 7}s`);
-  meteor.style.setProperty("--delay", `${Math.random() * -12}s`);
-  meteorField.appendChild(meteor);
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const meteorCount = prefersReducedMotion ? 0 : 4;
+if (meteorField && meteorCount > 0) {
+  for (let i = 0; i < meteorCount; i++) {
+    const meteor = document.createElement("span");
+    meteor.className = "meteor";
+    meteor.style.setProperty("--x", `${Math.random() * 100}vw`);
+    meteor.style.setProperty("--size", `${30 + Math.random() * 60}px`);
+    meteor.style.setProperty("--duration", `${6 + Math.random() * 6}s`);
+    meteor.style.setProperty("--delay", `${Math.random() * -10}s`);
+    meteorField.appendChild(meteor);
+  }
 }
